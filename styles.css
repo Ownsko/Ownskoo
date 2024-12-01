@@ -1,0 +1,369 @@
+html, body {
+    margin: 0;
+    background-color: rgb(218, 213, 213);
+    height: 100%;  /* Pour que l'élément body prenne toute la hauteur de l'écran */
+
+
+}
+
+header {
+    width: 100%;
+    position: absolute; 
+    top: 0;
+    bottom: 75%;
+}
+
+header h1 {
+    background-color: rgb(51, 4, 139);
+    color: white;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15%;
+    z-index: 1;
+    display: flex;
+    justify-content: center; /* Écarte le titre et l'image */
+    align-items: center;
+ 
+}
+header h1 .title {
+    text-align: center; /* Centre le texte du titre */
+    flex: 1; /* Permet au titre de prendre de l'espace libre entre les marges */
+}
+header h1 img {
+    width: 150px; /* Taille de l'image */
+    height: 150px;
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Garde le contenu bien ajusté */
+    border: 2px solid rgb(51, 4, 139); /* Optionnel : bordure */
+    position: absolute;
+    right: 7%;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 15%);  /* Ajuste la hauteur en fonction de l'écran */
+    width: 72%;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+}
+
+
+
+aside {
+    width: 25%;
+    position: absolute;
+    top: 20%;
+    right: 0;
+}
+
+header nav {
+    height: 15vh;
+    color: rgb(51, 4, 139);
+    font-size: large;
+    font-weight: bold;
+    border: 5px solid rgb(51, 4, 139);
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    white-space: nowrap;
+}
+
+header nav li {
+    margin-right: 200px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: rgb(51, 4, 139);
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: rgb(51, 214, 29);
+    transform: scale(1.2);
+}
+
+header nav ul li a:active {
+    color: rgb(51, 4, 139);
+}
+
+
+
+section.bordure {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 5px solid rgb(51, 4, 139);
+    padding: 20px;
+    gap: 35px;
+    line-height: 1.6;
+}
+
+.compétences{
+    padding-top: 80px;
+}
+
+h3 {
+    color: rgb(51, 4, 139);
+}
+
+section.content {
+    line-height: 2;
+}
+
+.content p{
+
+    font-size: 20px;
+
+}
+
+.pp{
+    padding-top: 50px;
+}
+
+h2 {
+    font-size: 35px;
+    color: rgb(51, 4, 139);
+}
+
+h4 {
+    font-size: 25px;
+    color: rgb(51, 4, 139);
+}
+
+h5 {
+    font-size: 20px;
+}
+
+.ulexp {
+    color: rgb(51, 4, 139);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+/* -------------------------------------------- */
+/* Media Queries pour rendre le site responsive */
+/* -------------------------------------------- */
+
+/* Pour les écrans de petite taille (tablettes, smartphones) */
+@media screen and (max-width: 1200px) {
+
+    header {
+        width: 100%;
+        position: absolute; 
+        top: 0;
+        bottom: 75%;
+    }
+
+    header h1 {
+        background-color: rgb(51, 4, 139);
+        color: white;
+        min-height: 15vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 15%;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section.content p{
+        font-size: 20px;
+    }
+
+
+    
+    header nav ul {
+        font-size: 20px; /* Réduit la taille des éléments */
+    }
+
+    header nav li {
+        margin-right: 150px; /* Réduit l'espacement horizontal */
+    }
+
+    
+
+    main {
+        width: 77%;  /* Plus large sur les petits écrans */
+        left: 3%;   /* Centrer avec un léger espacement */
+    }
+
+    aside {
+        width: 20%;  /* Ajuster la largeur de l'aside */
+    }
+
+    header h1 img {
+        width: 150px;  /* Plus petit sur mobile */
+        height: 160px;  /* Garde la forme carrée */
+        right: 3%;
+    }
+
+
+}
+@media screen and (max-width: 1050px){
+
+    header h1{
+        height: 10px;
+    }
+
+    header h1 img{
+        height: 150px;
+        width: 150px;
+        right: 2%;
+
+    }
+
+}
+
+/* Pour les très petits écrans (smartphones en portrait) */
+@media screen and (max-width: 768px) {
+ 
+
+    header h1 {
+        height: 12vh;  /* Moins de hauteur pour que l'en-tête ne prenne pas trop de place */
+    }
+
+    header h1 img {
+
+        visibility: hidden;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 30px;  /* Réduire la taille de l'en-tête */
+    }
+
+    h4 {
+        font-size: 18px;  /* Réduire la taille des sous-titres */
+    }
+
+    h5 {
+        font-size: 16px;  /* Réduire encore plus les petites tailles */
+    }
+}
+
+/* Pour les très grands écrans (plus de 1536px de largeur) */
+@media screen and (min-width: 1536px) {
+    main {
+        width: 70%;  /* Pour les grands écrans, réduire la largeur */
+    }
+
+    aside {
+        width: 25%;
+    }
+
+    header nav ul {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    header h1 {
+        height: 150px;  /* Plus de hauteur sur les grands écrans */
+    }
+
+    header h1 img {
+        width: 180px;
+        height: 180px;
+
+    }
+}
+
+@media screen and (max-width: 1536px) and (min-width: 1200px){
+
+    header h1 img{
+        width: 160px;
+        height: 160px;
+        right: 6%;
+    }
+    header nav ul li{
+        font-size: 25px;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+
+    header h1{
+        
+        height: 5px;
+    }
+
+    aside{
+
+        font-size: 10px;
+
+    }
+
+    main {
+        display: flex;
+        flex: 1;
+        min-height: calc(100vh - 15%);  /* Ajuste la hauteur en fonction de l'écran */
+        width: 72%;
+        position: absolute;
+        top: 20%;
+        left: 2%;
+    }
+
+    header h1 img{
+
+        height: 120px;
+        width: 120px;
+        right: 1%;
+
+    }
+
+    header nav ul li{
+
+        font-size: 20px;
+        margin-right: 85px;
+   
+    }
+
+}
+
+    @media screen and (max-width: 635px){
+
+    
+        header nav ul li{
+            font-size: 18px;
+            margin-right: 45px;
+        }
+
+        h3{
+            font-size: 17px;
+        }
+    
+        .content p{
+
+            font-size: 15px;
+        }
+
+        aside {
+            visibility: hidden;
+        }
+
+        main{
+            width: 95%;
+        }
+        
+
+    }
